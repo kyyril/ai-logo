@@ -1,3 +1,4 @@
+import { Data } from "@/lib/Data.interface";
 import React from "react";
 
 function HeadingDescription({ title, description }: any) {

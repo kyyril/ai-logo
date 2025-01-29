@@ -4,8 +4,10 @@ import HeadingDescription from "./HeadingDescription";
 import Lookup from "@/app/_data/Lookup";
 import LogoDisigns from "@/app/_data/LogoDesigns";
 
-function LogoDisign({ onHandleInputChange }: any) {
-  const [selectedOption, setSelectedOption] = useState();
+function LogoDesign({ onHandleInputChange, formState }: any) {
+  const [selectedOption, setSelectedOption] = useState(
+    formState?.design?.title
+  );
   return (
     <div className="my-10">
       <HeadingDescription
@@ -41,4 +43,4 @@ function LogoDisign({ onHandleInputChange }: any) {
   );
 }
 
-export default LogoDisign;
+export default LogoDesign;

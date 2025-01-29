@@ -6,14 +6,15 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeftIcon, ArrowRight } from "lucide-react";
 import LogoDesc from "./_components/LogoDesc";
 import LogoPalette from "./_components/LogoPalette";
-import LogoDisign from "./_components/LogoDisign";
 import LogoIdea from "./_components/LogoIdea";
+import { Data } from "@/lib/Data.interface";
+import LogoDesign from "./_components/LogoDesign";
 
 function createPage() {
   const [step, setStep] = useState(1);
-  const [formState, setFormState] = useState();
+  const [formState, setFormState] = useState<Data>();
 
-  const onHandleChange = (field: string, value: any) => {
+  const onHandleChange = (field: string, value: string) => {
     setFormState((prev: any) => ({
       ...prev,
       [field]: value,
@@ -26,19 +27,28 @@ function createPage() {
       {step == 1 ? (
         <LogoTitle
           onHandleInputChange={(v: any) => onHandleChange("title", v)}
+          formState={formState}
         />
       ) : step == 2 ? (
-        <LogoDesc onHandleInputChange={(v: any) => onHandleChange("desc", v)} />
+        <LogoDesc
+          onHandleInputChange={(v: any) => onHandleChange("desc", v)}
+          formState={formState}
+        />
       ) : step == 3 ? (
         <LogoPalette
           onHandleInputChange={(v: any) => onHandleChange("palette", v)}
+          formState={formState}
         />
       ) : step == 4 ? (
-        <LogoDisign
+        <LogoDesign
           onHandleInputChange={(v: any) => onHandleChange("design", v)}
+          formState={formState}
         />
       ) : step == 5 ? (
-        <LogoIdea onHandleInputChange={(v: any) => onHandleChange("idea", v)} />
+        <LogoIdea
+          onHandleInputChange={(v: any) => onHandleChange("idea", v)}
+          formState={formState}
+        />
       ) : null}
 
       <div className="flex justify-between items-center mt-2">
