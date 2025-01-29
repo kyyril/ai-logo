@@ -14,10 +14,11 @@ function createPage() {
   const [formState, setFormState] = useState();
 
   const onHandleChange = (field: string, value: any) => {
-    setFormState((prev) => ({
+    setFormState((prev: any) => ({
       ...prev,
       [field]: value,
     }));
+    console.log(formState);
   };
 
   return (
