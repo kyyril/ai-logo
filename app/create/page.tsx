@@ -35,7 +35,7 @@ function createPage() {
         />
       ) : step == 4 ? (
         <LogoDisign
-          onHandleInputChange={(v: any) => onHandleChange("disign", v)}
+          onHandleInputChange={(v: any) => onHandleChange("design", v)}
         />
       ) : step == 5 ? (
         <LogoIdea onHandleInputChange={(v: any) => onHandleChange("idea", v)} />
