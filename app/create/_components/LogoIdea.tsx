@@ -17,11 +17,11 @@ function LogoIdea({ formState, onHandleInputChange }: any) {
     setLoading(true);
     const PROMPT = Prompt.DESIGN_IDEA_PROMPT.replace(
       "{logoType}",
-      formState?.design.title
+      formState?.design?.title
     )
-      .replace("{logoTitle}", formState.title)
-      .replace("{logoDesc}", formState.desc)
-      .replace("{logoPrompt}", formState.design.prompt);
+      .replace("{logoTitle}", formState?.title)
+      .replace("{logoDesc}", formState?.desc)
+      .replace("{logoPrompt}", formState?.design?.prompt);
 
     // console.log(PROMPT);
     const result = await axios.post("/api/ai-design-ideas", {
@@ -29,7 +29,7 @@ function LogoIdea({ formState, onHandleInputChange }: any) {
     });
 
     console.log(result.data);
-    !ideas && setIdeas(result.data.ideas);
+    !ideas && setIdeas(result?.data?.ideas);
     setLoading(false);
   };
 
@@ -44,7 +44,7 @@ function LogoIdea({ formState, onHandleInputChange }: any) {
       </div>
       <div className="flex flex-wrap gap-3 mt-6">
         {ideas &&
-          ideas.map((item, index) => (
+          ideas?.map((item, index) => (
             <h2
               key={index}
               onClick={() => {

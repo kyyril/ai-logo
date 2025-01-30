@@ -9,6 +9,7 @@ import LogoPalette from "./_components/LogoPalette";
 import LogoIdea from "./_components/LogoIdea";
 import { Data } from "@/lib/Data.interface";
 import LogoDesign from "./_components/LogoDesign";
+import FinishModel from "./_components/FinishModel";
 
 function createPage() {
   const [step, setStep] = useState(1);
@@ -47,6 +48,11 @@ function createPage() {
       ) : step == 5 ? (
         <LogoIdea
           onHandleInputChange={(v: any) => onHandleChange("idea", v)}
+          formState={formState}
+        />
+      ) : step == 6 ? (
+        <FinishModel
+          onHandleInputChange={(v: any) => onHandleChange("finish", v)}
           formState={formState}
         />
       ) : null}

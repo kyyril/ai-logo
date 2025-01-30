@@ -16,8 +16,8 @@ export default {
   LogoColorPaletteTitle: "Choose Your Color Palette",
   LogoColorPaletteDesc:
     "Pick the colors that reflect your brands personality and create a lasting impression.",
-  LogoPricingModelTitle: "Select your AI Model Plan",
-  LogoPricingModelDesc: "Generate Unlimted Fast Logo with your fav model",
+  LogoFinalModelTitle: "Select your AI Model Plan",
+  LogoFinalModelDesc: "Generate Unlimted Fast Logo with your fav model",
   LoadingWaitDesc:
     "✨ Please wait a moment while we work our magic to bring your logo to life.",
   LoadingWaitTitle: "Your logo is being created",
